@@ -4,12 +4,12 @@
 
 Sur ma machine, j’utilise **Docker dans WSL2**.
 
-![Capture API](imgs/Screenshot 2025-12-05 102910.png)
+![Capture API](imgs/Screenshot_2025-12-05_102910.png)
 ---
 
 ## Question 1.b - Vérification de l’installation avec `docker run hello-world`
 
-![[Screenshot 2025-12-05 102918.png]]
+![Capture API](imgs/Screenshot_2025-12-05_102918.png)
 ## Question 1.c - Liste des conteneurs avec `docker ps -a`
 ![[Screenshot 2025-12-05 103014.png]]
 
