@@ -11,7 +11,7 @@ Sur ma machine, j’utilise **Docker dans WSL2**.
 
 ![Capture API](imgs/Screenshot_2025-12-05_102918.png)
 ## Question 1.c - Liste des conteneurs avec `docker ps -a`
-![[Screenshot 2025-12-05 103014.png]]
+![Capture API](imgs/Screenshot 2025-12-05 103014.png)
 
 La commande `docker ps -a` affiche :
 - les conteneurs **en cours d'exécution**,
@@ -28,7 +28,7 @@ La commande `docker ps -a` affiche :
   C’est l'exécution réelle de cette image : il possède son propre système de fichiers, son état, ses processus.
 ## Question 2.b -
 
-![[Screenshot 2025-12-05 103228copy.png]]
+![Capture API](imgs/Screenshot_2025-12-05_103228copy.png)
 ### Explication de ce qui se passe
 - Docker télécharge l’image `alpine` si elle n’est pas déjà présente.
 - Il crée un conteneur temporaire basé sur cette image.
@@ -40,14 +40,14 @@ echo "Bonjour depuis un conteneur Alpine"
 
 ## Question 2.c - 
 
-![[Screenshot 2025-12-05 103228ffs.png]]
+![Capture API](imgs/Screenshot_2025-12-05_103228ffs.png)
 
 On voit un conteneur basé sur l’image **alpine** avec le statut "Exited".
 Parce que la commande demandée (`echo ...`) s’est exécutée **puis s’est terminée immédiatement**
 Docker ferme automatiquement le conteneur lorsque le processus principal se termine.
 
 ## Question 2.d -
-![[Screenshot 2025-12-05 103228.png]]
+![Capture API](imgs/Screenshot_2025-12-05_103228.png)
 ### Observations
 - `ls` affiche un système de fichiers très minimaliste propre à Alpine.  
     On voit généralement : `/bin`, `/etc`, `/lib`, `/usr`, `/tmp`, etc.
@@ -58,25 +58,25 @@ Docker ferme automatiquement le conteneur lorsque le processus principal se term
 
 ## Question 3.a -
 
-![[Pasted image 20251205115525.png]]
+![Capture API](imgs/Pasted_image_20251205115525.png)
 ## Question 3.b -
 
-![[Screenshot 2025-12-05 104715.png]]
+![Capture API](imgs/Screenshot_2025-12-05_104715.png)
 
 ## Question 3.c -
 
-![[Screenshot 2025-12-05 104635.png]]
+![Capture API](imgs/Screenshot_2025-12-05_104635.png)
 
 # Exercice 4 :
 
 ## Question 4.a -
 
-![[Screenshot 2025-12-05 105411.png]]
+![Capture API](imgs/Screenshot 2025-12-05 105411.png)
 L’option `-p` réalise un **mapping de port** :
 - le premier `8000` = port de la **machine hôte** (Windows/WSL)
 - le second `8000` = port du **conteneur** (là où Uvicorn écoute)
 ## Question 4.b - 4.c - 
-![[Screenshot 2025-12-05 105219.png]]
+![Capture API](imgs/Screenshot_2025-12-05_105219.png)
 
 Dans la ligne correspondante, on observe :
 - **Nom du conteneur :** nifty_turning
@@ -89,35 +89,35 @@ Différence entre `docker ps` et `docker ps -a`
 
 # Exercice 5 :
 ## Question 5.a -
-![[Screenshot 2025-12-05 105839.png]]
+![Capture API](imgs/Screenshot_2025-12-05_105839.png)
 ## Question 5.b -
-![[Screenshot 2025-12-05 110122.png]]
+![Capture API](imgs/Screenshot_2025-12-05_110122.png)
 
 ## Question 5.c -
-![[Screenshot 2025-12-05 110251.png]]
+![Capture API](imgs/Screenshot_2025-12-05_110251.png)
 
-![[Screenshot 2025-12-05 110259.png]]
+![Capture API](imgs/Screenshot_2025-12-05_110259.png)
 
-![[Screenshot 2025-12-05 110330.png]]
+![Capture API](imgs/Screenshot_2025-12-05_110330.png)
 
 ## Question 5.d - 5.e - 
-![[Screenshot 2025-12-05 110503.png]]
+![Capture API](imgs/Screenshot_2025-12-05_110503.png)
 
 - **`docker stop`** = arrêter un seul conteneur sans nettoyage.
 - **`docker compose down`** = arrêter _toute_ l’application et supprimer tous les conteneurs/ressources liées.
 
 # Exercice 6 :
 ## Question 6.a -
-![[Screenshot 2025-12-05 110803.png]]
+![Capture API](imgs/Screenshot 2025-12-05 110803.png)
 
-![[Screenshot 2025-12-05 110813.png]]
+![Capture API](imgs/Screenshot 2025-12-05 110813.png)
 
 - `exec` : exécuter une commande à l'intérieur d'un conteneur en cours d'exécution.
 - `db` : Il s'agit du nom du service dans notre fichier docker-compose.yml.
 - `-U` : Cet indicateur indique à PostgreSQL avec quel utilisateur de base de données se connecter.
 - `-d` : Ce paramètre indique à PostgreSQL quelle base de données ouvrir.
 ## Question 6.b -
-![[Screenshot 2025-12-05 110850.png]] 
+![Capture API](imgs/Screenshot_2025-12-05_110850.png) 
 
 ## Question 6.c -
 Lorsqu’on utilise **Docker Compose**, tous les services d’un même fichier `docker-compose.yml` partagent **le même réseau interne**, ce qui permet de les connecter simplement à PostgreSQL.
@@ -128,16 +128,16 @@ Pour qu’un service se connecte à la base PostgreSQL, il suffit d’utiliser l
 - Nom de la base : testDB (comme defini dans le yml)
 
 ## Question 6.d -
-![[Screenshot 2025-12-05 111134.png]]
+![Capture API](imgs/Screenshot_2025-12-05_111134.png)
 
 L’option **`-v`** dans `docker compose down -v` supprime **tous les volumes associés aux services** du fichier `docker-compose.yml`.  
 Et doncm, **toutes les données persistantes (ex. base de données, fichiers stockés)** sont définitivement effacées.
 
 # Exercice 7 :
 ## Question 7.a -
-![[Screenshot 2025-12-05 111438.png]]
+![Capture API](imgs/Screenshot_2025-12-05_111438.png)
 ## Question 7.b - 7.c - 
-![[Screenshot 2025-12-05 111827.png]]
+![Capture API](imgs/Screenshot_2025-12-05_111827.png)
 
 en lançant `ls` et `python --version`, j’observe :
 - un système de fichiers minimal propre au conteneur,
@@ -151,14 +151,14 @@ Un redémarrage est utile lorsque :
 - le service doit être relancé sans arrêter toute l’application.
 Cela permet de relancer uniquement le service concerné sans interrompre les autres.
 ## Question 7.d -
-![[Screenshot 2025-12-05 111940.png]]
+![Capture API](imgs/Screenshot_2025-12-05_111940.png)
 
-![[Screenshot 2025-12-05 112045.png]]
+![Capture API](imgs/Screenshot_2025-12-05_112045.png)
 
-![[Screenshot 2025-12-05 112109.png]]
+![Capture API](imgs/Screenshot_2025-12-05_112109.png)
 
 ## Question 7.e -
-![[Screenshot 2025-12-05 112300.png]]
+![Capture API](imgs/Screenshot_2025-12-05_112300.png)
 
 Il est utile de nettoyer régulièrement Docker car :
 - **les conteneurs arrêtés** et **les images inutilisées** occupent rapidement beaucoup d’espace disque.
