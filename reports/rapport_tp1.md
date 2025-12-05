@@ -4,7 +4,7 @@
 
 Sur ma machine, j’utilise **Docker dans WSL2**.
 
-![[Screenshot 2025-12-05 102910.png]]
+![Capture API](imgs/Screenshot 2025-12-05 102910.png)
 ---
 
 ## Question 1.b - Vérification de l’installation avec `docker run hello-world`
