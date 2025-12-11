@@ -1,32 +1,32 @@
 # Exercice 1 :
 ## Question 1.a -
-![](Screenshot%202025-12-11%20151156.png)
+![Capture API](tp2imgs/Screenshot%202025-12-11%20151156.png)
 ## Question 1.b -
-![](Screenshot%202025-12-11%20151139.png)
+![Capture API](tp2imgs/Screenshot%202025-12-11%20151139.png)
 
 Side note: Ici j'ai fait une faute de frappe et écrit « init » avec deux « n ». Je me suis rendu compte de cette erreur plus tard et je l'ai corrigée.
 ## Question 1.c -
 
-![](Pasted%20image%2020251211165958.png)
+![Capture API](tp2imgs/Pasted%20image%2020251211165958.png)
 # Exercice 2 :
 ## Question 2.a -
-![](Pasted%20image%2020251211152755.png)
+![Capture API](tp2imgs/Pasted%20image%2020251211152755.png)
 
-![](Pasted%20image%2020251211152729.png)
+![Capture API](tp2imgs/Pasted%20image%2020251211152729.png)
 
 ## Question 2.b -
-![](Pasted%20image%2020251211153004.png)
+![Capture API](tp2imgs/Pasted%20image%2020251211153004.png)
 
 Le fichier _.env_ dans un projet Docker sert à centraliser les variables d’environnement (ports, mots de passe, chemins, configurations…) afin de faciliter la configuration, éviter de modifier directement le _docker-compose.yml_ et simplifier la gestion des paramètres sensibles.
 
 ## Question 2.c -
-![](Pasted%20image%2020251211153620.png)
+![Capture API](tp2imgs/Pasted%20image%2020251211153620.png)
 
-![](Pasted%20image%2020251211153644.png)
+![Capture API](tp2imgs/Pasted%20image%2020251211153644.png)
 ## Question 2.d -
-![](Pasted%20image%2020251211154600.png)
+![Capture API](tp2imgs/Pasted%20image%2020251211154600.png)
 
-![](Pasted%20image%2020251211162005.png)
+![Capture API](tp2imgs/Pasted%20image%2020251211162005.png)
 ### **Commentaires sur les tables**
 
 - **labels** : contient les étiquettes / catégories liées aux utilisateurs (par exemple churn / non-churn ou classification utilisée dans l’analyse).
@@ -38,8 +38,8 @@ Le fichier _.env_ dans un projet Docker sert à centraliser les variables d’en
 
 # Exercice 3 :
 ## Question 3.a -
-![](Pasted%20image%2020251211163356.png)
-![](Pasted%20image%2020251211163406.png)
+![Capture API](tp2imgs/Pasted%20image%2020251211163356.png)
+![Capture API](tp2imgs/Pasted%20image%2020251211163406.png)
 
 - Le conteneur _prefect_ sert d’orchestrateur du pipeline d’ingestion : il planifie, exécute et supervise les différentes étapes de traitement des données afin d’assurer un flux fiable, automatisé et reproductible entre les services du projet.
 ## Question 3.b -
@@ -49,8 +49,8 @@ La fonction **`upsert_csv`** charge un fichier CSV dans PostgreSQL en appliquant
 
 En cas de conflit sur la clé primaire, la fonction met simplement à jour les colonnes existantes avec les nouvelles valeurs. Enfin, la table temporaire est supprimée et la fonction retourne le nombre de lignes traitées.
 ## Question 3.c -
-![](Pasted%20image%2020251211170709.png)
-![](Pasted%20image%2020251211170729.png)
+![Capture API](tp2imgs/Pasted%20image%2020251211170709.png)
+![Capture API](tp2imgs/Pasted%20image%2020251211170729.png)
 
 # Exercice 4 :
 ## Question 4.a -
@@ -59,9 +59,9 @@ La fonction **`validate_with_ge`** joue le rôle de garde-fou qualité dans le p
 
 Si une expectation échoue, la fonction déclenche une exception, ce qui **interrompt immédiatement le flow Prefect** pour éviter que des données incorrectes ou corrompues ne soient utilisées dans les étapes suivantes.
 ## Question 4.b -
-![](Pasted%20image%2020251211172728.png)
+![Capture API](tp2imgs/Pasted%20image%2020251211172728.png)
 ## Question 4.c -
-![](Pasted%20image%2020251211173026.png)
+![Capture API](tp2imgs/Pasted%20image%2020251211173026.png)
 
 Les bornes choisies (`>= 0` sur _watch_hours_30d_, _avg_session_mins_7d_, _unique_devices_30d_, _skips_7d_) garantissent que les agrégats d’usage restent cohérents avec la réalité : des heures visionnées, des appareils utilisés ou des sauts de contenu ne peuvent jamais être négatifs.
 
@@ -70,9 +70,9 @@ Ces règles permettent de détecter immédiatement des fichiers corrompus, des e
 ## Question 5.a -
 `snapshot_month(as_of)` crée une photographie immuable des tables au mois donné : il enregistre l’état exact des données à la date _as_of_, ce qui permet de garder une version stable et reproductible pour l’entraînement et l’évaluation futurs du modèle.
 ## Question 5.b -
-![](Pasted%20image%2020251211174151.png)
+![Capture API](tp2imgs/Pasted%20image%2020251211174151.png)
 
-![](Pasted%20image%2020251211174206.png)
+![Capture API](tp2imgs/Pasted%20image%2020251211174206.png)
 
 - Les snapshots du 31/01/2024 et du 29/02/2024 n’ont pas le même nombre de lignes. Le premier snapshot contient 0 lignes car la table `subscriptions` ne contenait aucune donnée lors de l’ingestion du mois _month_000_. Le second snapshot contient 7043 lignes car les données du mois _month_001_ étaient présentes au moment de l’ingestion.
 ## Question 5.c -
